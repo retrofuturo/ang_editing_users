@@ -1,0 +1,11 @@
+
+<h3>Events</h3>
+<hr>
+<button (click)="fireEvent($event)">Fire event</button>
+<button (mouseenter)="fireEvent($event)">Fire event</button>
+
+<button (click)="toggleArticle()">Toggle article</button>
+<p *ngIf="showArticle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Doloremque est illum iure nesciunt quod. Alias aperiam corporis,
+  delectus excepturi id itaque minima quaerat repudiandae velit veniam,
+  vitae voluptatem? Ex, explicabo.</p>
