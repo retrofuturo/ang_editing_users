@@ -1,0 +1,44 @@
+<div class="container">
+  <form class="mt-3 mb-5" novalidate #form="ngForm" (ngSubmit)="addPost(form)">
+    <div class="form-group row">
+      <label for="title" class="col-sm-2 col-form-label">Enter title:</label>
+      <div class="col-sm-10">
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="post.title"
+               name="title"
+               id="title"
+               required
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="body" class="col-sm-2 col-form-label">Enter post:</label>
+      <div class="col-sm-10">
+        <textarea class="form-control"
+                  rows="5"
+                 [(ngModel)]="post.body"
+                 name="body"
+                 id="body"
+                 required
+        ></textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary"
+    >
+      Add post
+    </button>
+  </form>
+  <div class="card mb-3"
+       *ngFor="let post of posts; let i = index"
+  >
+    <h5 class="card-header">User {{ post.userId }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.body }}</p>
+      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-warning" (click)="editPost(i, 'changedPost')">Edit</button>
+      <button class="btn btn-info">Show more by user {{ post.userId }}</button>
+    </div>
+  </div>
+</div>
