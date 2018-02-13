@@ -13,7 +13,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { UsersComponent } from "./components/users/users.component";
 // import services
 import {TodoDataService} from "./services/todo-data.service";
-
+import { PostsService } from "./services/posts.service";
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import {TodoDataService} from "./services/todo-data.service";
     FormsModule,
     HttpClientModule
   ],
-  providers: [TodoDataService],
+  providers: [TodoDataService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
